@@ -1,24 +1,12 @@
-#Utiliza  match para implementar una calculadora simple.
+#Escribe un programa que determine el tipo de triángulo en función de sus lados usando if.
 
-firstNumber = float(input("What's the first number?"))
-operation = input("What's the operation? ( + | - | * | / ): ")
-secondNumber = float(input("What's the second number?"))
+firstLeg = float(input("What's the first leg of a triangle?: "))
+secondLeg = float(input("What's the second leg of a triangle?: "))
+thirdLeg = float(input("What's the third leg of a triangle?: "))
 
-match operation:
-    case "+":
-        result = firstNumber + secondNumber
-        print(f"The result of sum at {firstNumber} and {secondNumber} is: {result}")
-    case "-":
-        result = firstNumber - secondNumber
-        print(f"The result of subtraction at {firstNumber} and {secondNumber} is: {result}")
-    case "*":
-        result = firstNumber * secondNumber
-        print(f"The result of multiplication at {firstNumber} and {secondNumber} is: {result}")
-    case "/":
-        if secondNumber != 0:
-            result = firstNumber / secondNumber
-            print(f"The result of division at {firstNumber} and {secondNumber} is: {result}")
-        else:
-            print("Error: Division by zero is not allowed.")
-    case _:
-        print("Error: Invalid operation.")
+if firstLeg == secondLeg == thirdLeg:
+    print("The triangle is equilateral.")
+elif (firstLeg == secondLeg) or (secondLeg == thirdLeg) or (firstLeg == thirdLeg):
+    print("The triangle is isoceles.")
+elif (firstLeg != secondLeg) and (secondLeg != thirdLeg) and (firstLeg != thirdLeg):
+    print("The tiangle is scalene.")
