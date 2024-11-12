@@ -1,18 +1,10 @@
-#Escribe un programa que implemente un juego de adivinanza de números.
+#Escribe un programa que determine si un número es positivo, negativo o cero usando if.
 
-import random
+number = float(input("What's the number?: "))
 
-randomNumber = random.randint(1, 10)
-
-while True:
-    attempt = int(input("What number between 1 and 10 do you think it is?: "))
-
-    if attempt == randomNumber:
-        print("Congrats! You guessed the number.")
-        break
-    elif attempt > randomNumber:
-        print("Try again! The number is lower.")
-    elif attempt < randomNumber:
-        print("Try again! The number is higher.")
-    else:
-        print("Error: Number out of range.")
+if number == 0:
+    print("The number is zero.")
+elif number < 0:
+    print("The number is negative.")
+elif number > 0:
+    print("The number is positive.")
