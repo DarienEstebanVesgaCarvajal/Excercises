@@ -1,17 +1,14 @@
-#Escribe un programa que calcule el IMC y determine el estado de peso.
+#Escribe un programa que determine el mayor de tres números usando if.
 
-weight = float(input("What's your weight? (In Kg): "))
-height = float(input("What is your height? (In m): "))
+firstNumber = float(input("What's the first number?: "))
+secondNumber = float(input("What's the second number?: "))
+thirdNumber = float(input("What's the third number?: "))
 
-bodyMassIndex = (weight / (height) ** 2)
-
-if bodyMassIndex > 0 and bodyMassIndex < 18.5:
-    print("You're underweight.")
-elif bodyMassIndex >= 18.5 and bodyMassIndex <= 24.9:
-    print("You're normal weight.")
-elif bodyMassIndex >= 25 and bodyMassIndex <= 29.9:
-    print("You're overweight.")
-elif bodyMassIndex >= 30:
-    print("You're obese.")
+if (secondNumber < firstNumber) and (thirdNumber < firstNumber):
+    print(f"""The highest number is the first number: {firstNumber}.""")
+elif (firstNumber < secondNumber) and (thirdNumber < secondNumber):
+    print(f"""The highest number is the second number: {secondNumber}.""")
+elif (firstNumber < thirdNumber) and (secondNumber < thirdNumber):
+    print(f"""The highest number is the third number: {thirdNumber}.""")
 else:
-    print("Error: Negative data.")
+    print("Error: Highest numbers are identical.")
