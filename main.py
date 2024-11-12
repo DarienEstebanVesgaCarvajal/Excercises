@@ -1,12 +1,21 @@
-#Escribe un programa que determine el tipo de triángulo en función de sus lados usando if.
+#Escribe un programa que, dado un número del 1 al 7, imprima el día correspondiente de la semana usando match.
 
-firstLeg = float(input("What's the first leg of a triangle?: "))
-secondLeg = float(input("What's the second leg of a triangle?: "))
-thirdLeg = float(input("What's the third leg of a triangle?: "))
+numberDay = input("What's the day's number?: ")
 
-if firstLeg == secondLeg == thirdLeg:
-    print("The triangle is equilateral.")
-elif (firstLeg == secondLeg) or (secondLeg == thirdLeg) or (firstLeg == thirdLeg):
-    print("The triangle is isoceles.")
-elif (firstLeg != secondLeg) and (secondLeg != thirdLeg) and (firstLeg != thirdLeg):
-    print("The tiangle is scalene.")
+match numberDay:
+    case "1":
+        print("The day is Monday.")
+    case "2":
+        print("The day is Tuesday.")
+    case "3":
+        print("The day is Wednesday.")
+    case "4":
+        print("The day is Thursday.")
+    case "5":
+        print("The day is Friday.")
+    case "6":
+        print("The day is Saturday.")
+    case "7":
+        print("The day is Sunday.")
+    case _:
+        print("Error: Invalid number.")
