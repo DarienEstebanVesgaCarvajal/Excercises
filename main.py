@@ -1,14 +1,19 @@
-#Escribe un programa que determine el mayor de tres números usando if.
+#Escribe un programa que permita al usuario adivinar una letra secreta usando match.
 
-firstNumber = float(input("What's the first number?: "))
-secondNumber = float(input("What's the second number?: "))
-thirdNumber = float(input("What's the third number?: "))
+import random
 
-if (secondNumber < firstNumber) and (thirdNumber < firstNumber):
-    print(f"""The highest number is the first number: {firstNumber}.""")
-elif (firstNumber < secondNumber) and (thirdNumber < secondNumber):
-    print(f"""The highest number is the second number: {secondNumber}.""")
-elif (firstNumber < thirdNumber) and (secondNumber < thirdNumber):
-    print(f"""The highest number is the third number: {thirdNumber}.""")
-else:
-    print("Error: Highest numbers are identical.")
+letters = "aAáÁbBcCdDeEéÉfFgGhHiIíÍjJkKlLmMnNñÑoOóÓpPqQrRsStTuUúÚüÜvVwWxXyYzZ"
+
+secretLetter = random.choice(letters)
+
+while True:
+
+    userGuess = input("Which letter do you think it is?: ")
+
+    match userGuess:
+
+        case _ if userGuess == secretLetter:
+            print("Congrats! You guessed the letter.")
+            break
+        case _:
+            print("'Nah'! Try again!")
