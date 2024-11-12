@@ -1,21 +1,31 @@
-#Escribe un programa que calcule el tiempo que tarda en llegar un automóvil a su destino.
+#Escribe un programa que calcule la calificación final de un estudiante basándose en su calificación y si ha hecho tareas adicionales. Las tareas adicionales pueden darle un extra de puntos, pero el máximo de puntos no puede exceder 100.
 
-distanceToCover = float(input("What's the distance to be covered? (in km): "))
-averageSpeed = float(input("What's the average speed? (in km/h): "))
+grade = float(input("What's your grade?: "))
+additionalTasks = input("""Have you done additional tasks?
+    Y (Yes).
+    N (Not).
+( Y | N ): """)
 
-if averageSpeed > 0 and averageSpeed < 120:
-    travelTime = (distanceToCover/averageSpeed)
+additionalTasks = additionalTasks.upper()
 
-    hours = int(travelTime)
-    minutes = int((travelTime -  hours) * 60)
+while True:
 
-    if hours == 0:
-        print(f"""Travel time is {minutes} minutes approx.""")
-    elif minutes == 0:
-        print(f"""Travel time is {hours} hours approx.""")
-    else:
-        print(f"""Travel time is {hours} hours and {minutes} minutes approx.""")
-elif averageSpeed > 120:
-    print("Warning: Overspeed.")
-else:
-    print("Error: Negative speed or zero.")
+    match additionalTasks:
+        case "Y":
+            finalGrade = grade + (0.05 * grade)
+            if finalGrade > 100:
+                finalGrade = 100
+                print(f"""You have a grade of: {finalGrade:.2f}.""")
+            else:
+                print(f"""You have a grade of: {finalGrade:.2f}.""")
+            break
+        case "N":
+            print(f"""You have a grade of: {grade:.2f}. """)
+            break
+        case _:
+            print("Error: Wrong character.")
+            additionalTasks = input("""Have you done additional tasks?
+    Y (Yes).
+    N (Not).
+( Y | N ): """)
+            additionalTasks = additionalTasks.upper()
