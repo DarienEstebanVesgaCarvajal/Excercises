@@ -1,21 +1,18 @@
-#Escribe un programa que, dado un número del 1 al 7, imprima el día correspondiente de la semana usando match.
+#Escribe un programa que implemente un juego de adivinanza de números.
 
-numberDay = input("What's the day's number?: ")
+import random
 
-match numberDay:
-    case "1":
-        print("The day is Monday.")
-    case "2":
-        print("The day is Tuesday.")
-    case "3":
-        print("The day is Wednesday.")
-    case "4":
-        print("The day is Thursday.")
-    case "5":
-        print("The day is Friday.")
-    case "6":
-        print("The day is Saturday.")
-    case "7":
-        print("The day is Sunday.")
-    case _:
-        print("Error: Invalid number.")
+randomNumber = random.randint(1, 10)
+
+while True:
+    attempt = int(input("What number between 1 and 10 do you think it is?: "))
+
+    if attempt == randomNumber:
+        print("Congrats! You guessed the number.")
+        break
+    elif attempt > randomNumber:
+        print("Try again! The number is lower.")
+    elif attempt < randomNumber:
+        print("Try again! The number is higher.")
+    else:
+        print("Error: Number out of range.")
