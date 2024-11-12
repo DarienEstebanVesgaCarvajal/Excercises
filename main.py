@@ -1,24 +1,21 @@
-#Escribe un programa que calcule el salario neto de un empleado después de aplicar impuestos.
+#Escribe un programa que calcule el tiempo que tarda en llegar un automóvil a su destino.
 
-grossWage = float(input("What's your gross wage?: $"))
-country = int(input("""What's your country?
-    1. Austria.
-    2. Belgium.
-    3. Czech.
-    0. Another Country.
-( 1 | 2 | 3 | 0 ): """))
+distanceToCover = float(input("What's the distance to be covered? (in km): "))
+averageSpeed = float(input("What's the average speed? (in km/h): "))
 
-if country == 1:
-    netSalary = grossWage - (0.20 * grossWage)
-    print(f"""Your net wage is: ${netSalary:.2f}""")
-elif country == 2:
-    netSalary = grossWage - (0.15 * grossWage)
-    print(f"""Your net wage is: ${netSalary:.2f}""")
-elif country == 3:
-    netSalary = grossWage - (0.10 * grossWage)
-    print(f"""Your net wage is: ${netSalary:.2f}""")
-elif country == 0:
-    netSalary = grossWage - (0.25 * grossWage)
-    print(f"""Your net wage is: ${netSalary:.2f}""")
+if averageSpeed > 0 and averageSpeed < 120:
+    travelTime = (distanceToCover/averageSpeed)
+
+    hours = int(travelTime)
+    minutes = int((travelTime -  hours) * 60)
+
+    if hours == 0:
+        print(f"""Travel time is {minutes} minutes approx.""")
+    elif minutes == 0:
+        print(f"""Travel time is {hours} hours approx.""")
+    else:
+        print(f"""Travel time is {hours} hours and {minutes} minutes approx.""")
+elif averageSpeed > 120:
+    print("Warning: Overspeed.")
 else:
-    print("Error: Incorrect Country.")
+    print("Error: Negative speed or zero.")
