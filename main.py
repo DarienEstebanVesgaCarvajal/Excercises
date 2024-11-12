@@ -1,8 +1,14 @@
-#Escribe un programa que determine si un año es bisiesto o no.
+#Escribe un programa que clasifique a una persona en función de su edad.
 
-year = int(input("What's the year to check?: "))
+age = int(input("What' the age?: "))
 
-if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
-    print("The year is a leap year.")
+if age >= 0 and age <= 12:
+    print("It's a child.")
+elif age >= 13 and age <= 17:
+    print("It's a teenager.")
+elif age >= 18 and age <= 64:
+    print("It's an adult.")
+elif age >= 65:
+    print("It's an old.")
 else:
-    print("The year isn't a leap year.")
+    print("Error: Invalid age.")
