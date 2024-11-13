@@ -1,18 +1,15 @@
-#Escribe un programa que genere un número aleatorio entre 1 y 100 y permita al usuario adivinarlo. El programa debe dar pistas si el número ingresado es mayor o menor que el número secreto. Usa un ciclo while para permitir al usuario seguir intentando hasta que adivine el número.
+#Escribe un programa que solicite al usuario ingresar números enteros indefinidamente. El programa debe sumar los números siempre que sean pares, pero debe detenerse si el usuario ingresa un número impar. Usa un ciclo while para lograr esto.
 
-import random
+sumEvenNumbers = 0
 
-secretNumber = random.randint(1, 100)
+print("What's the integer to add if it's even? (The program will stop if you enter an odd number):")
 
 while True:
-    attempt = int(input("What number between 1 and 100 do you think it is?: "))
-
-    if attempt == secretNumber:
-        print("Congrats! You guessed the number.")
-        break
-    elif attempt > secretNumber:
-        print("Try again! The number is lower.")
-    elif attempt < secretNumber:
-        print("Try again! The number is higher.")
+    number = int(input("What's the integer you'd like to enter?: "))
+    
+    if number % 2 == 0:
+        sumEvenNumbers += number
+        print(f"Current sum of even numbers is: {sumEvenNumbers}.")
     else:
-        print("Error: Number out of range.")
+        print("An odd number was entered.")
+        break
