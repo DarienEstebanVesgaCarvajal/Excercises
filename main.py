@@ -1,9 +1,10 @@
-#Escribe un programa que solicite al usuario un número entero positivo n y calcule la suma de los primeros n números enteros. Utiliza un ciclo for para realizar la suma.
+ #Escribe un programa que solicite al usuario una cadena de texto y cuente cuántas vocales (a, e, i, o, u) contiene. Usa un ciclo for para recorrer la cadena y realizar la cuenta.
 
-numberSum = int(input("What's the positive integer you'd like to sum up to?: "))
+textString = input("What's the text you'd like to analyze for vowels?: ")
+vowelCount = 0
 
-totalSum = 0
-for number in range(1, numberSum + 1):
-    totalSum += number
+for character in textString:
+    if character.lower() in 'aeiou':
+        vowelCount += 1
 
-print(f"The sum of the first {numberSum} integers is: {totalSum}.")
+print(f"The number of vowels in your text is: {vowelCount}.")
