@@ -1,21 +1,15 @@
-#Escribe un programa que calcule el costo de estacionamiento basado en el número de horas, con tarifas progresivas.
+# Escribe un programa que clasifique un triángulo en agudo, obtuso o rectángulo según sus ángulos internos.
 
-parkingHours = int(input("How many hours of parking will you pay?: "))
+firstAngle = float(input("What's the first angle of the triangle? (in degrees): "))
+secondAngle = float(input("What's the second angle of the triangle? (in degrees): "))
+thirdAngle = float(input("What's the third angle of the triangle? (in degrees): "))
 
-match parkingHours:
-    case 1:
-        value = 5
-    case 2:
-        value = 5 + 4
-    case 3:
-        value = 5 + (4 * 2)
-    case 4:
-        value = 5 + (4 * 3)
-    case _ if parkingHours > 4:
-        value = 5 + (4 * 3) + (3 * (parkingHours - 4))
-    case _:
-        print("Error: Invalid number of hours.")
-        value = None
-
-if value is not None:
-    print(f"The value to be paid is: ${value}.")
+if firstAngle + secondAngle + thirdAngle == 180:
+    if firstAngle < 90 and secondAngle < 90 and thirdAngle < 90:
+        print("The triangle is acute.")
+    elif firstAngle == 90 or secondAngle == 90 or thirdAngle == 90:
+        print("The triangle is right.")
+    elif firstAngle > 90 or secondAngle > 90 or thirdAngle > 90:
+        print("The triangle is obtuse.")
+else:
+    print("Error: The angles do not form a valid triangle.")
