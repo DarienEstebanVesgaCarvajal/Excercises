@@ -1,10 +1,9 @@
- #Escribe un programa que solicite al usuario una cadena de texto y cuente cuántas vocales (a, e, i, o, u) contiene. Usa un ciclo for para recorrer la cadena y realizar la cuenta.
+#Escribe un programa que solicite al usuario un número entero positivo n y calcule el factorial de dicho número n! = 1 \* 2 \* 3 \* ... \* n ). Usa un ciclo for para realizar el cálculo.
 
-textString = input("What's the text you'd like to analyze for vowels?: ")
-vowelCount = 0
+numberFactorial = int(input("What's the positive integer you'd like to calculate the factorial of?: "))
+factorial = 1
 
-for character in textString:
-    if character.lower() in 'aeiou':
-        vowelCount += 1
+for number in range(1, numberFactorial + 1):
+    factorial *= number
 
-print(f"The number of vowels in your text is: {vowelCount}.")
+print(f"The factorial of {numberFactorial} is: {factorial}.")
