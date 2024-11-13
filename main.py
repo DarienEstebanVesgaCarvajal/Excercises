@@ -1,22 +1,21 @@
-#Escribe un programa que convierta una calificación numérica en una letra de acuerdo a un sistema de calificación específico, usando  match.
+#Escribe un programa que calcule el costo de estacionamiento basado en el número de horas, con tarifas progresivas.
 
-grade = int(input("What's the grade?: "))
+parkingHours = int(input("How many hours of parking will you pay?: "))
 
-match grade:
-    case grade if 90 <= grade <= 100:
-        letterGrade = "A"
-        print(f"""Your grade is: {letterGrade}.""")
-    case grade if 80 <= grade <= 89:
-        letterGrade = "B"
-        print(f"""Your grade is: {letterGrade}.""")
-    case grade if 70 <= grade <= 79:
-        letterGrade = "C"
-        print(f"""Your grade is: {letterGrade}.""")
-    case grade if 60 <= grade <= 69:
-        letterGrade = "D"
-        print(f"""Your grade is: {letterGrade}.""")
-    case grade if 0 <= grade <= 59:
-        letterGrade = "F"
-        print(f"""Your grade is: {letterGrade}.""")
+match parkingHours:
+    case 1:
+        value = 5
+    case 2:
+        value = 5 + 4
+    case 3:
+        value = 5 + (4 * 2)
+    case 4:
+        value = 5 + (4 * 3)
+    case _ if parkingHours > 4:
+        value = 5 + (4 * 3) + (3 * (parkingHours - 4))
     case _:
-        print("Error: Invalid grade.")
+        print("Error: Invalid number of hours.")
+        value = None
+
+if value is not None:
+    print(f"The value to be paid is: ${value}.")
