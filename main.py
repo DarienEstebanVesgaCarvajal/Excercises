@@ -1,9 +1,9 @@
-#Escribe un programa que solicite al usuario un número entero positivo n y calcule el factorial de dicho número n! = 1 \* 2 \* 3 \* ... \* n ). Usa un ciclo for para realizar el cálculo.
+#Escribe un programa que solicite al usuario dos números enteros, un valor de inicio y un valor de fin. El programa debe imprimir todos los números pares en ese rango, incluyendo los límites. Usa un ciclo for para recorrer el rango.
 
-numberFactorial = int(input("What's the positive integer you'd like to calculate the factorial of?: "))
-factorial = 1
+startValue = int(input("What's the starting integer of your range?: "))
+endValue = int(input("What's the ending integer of your range?: "))
 
-for number in range(1, numberFactorial + 1):
-    factorial *= number
-
-print(f"The factorial of {numberFactorial} is: {factorial}.")
+print("The even numbers in your range are:")
+for evenNumber in range(startValue, endValue + 1):
+    if evenNumber % 2 == 0:
+        print(evenNumber)
