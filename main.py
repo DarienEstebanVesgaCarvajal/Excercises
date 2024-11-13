@@ -1,12 +1,22 @@
-#Escribe un programa que calcule el número de créditos totales de un estudiante en base a las materias cursadas y el puntaje obtenido en cada una. El puntaje debe ser evaluado como aprobado o no aprobado.
+#Escribe un programa que convierta una calificación numérica en una letra de acuerdo a un sistema de calificación específico, usando  match.
 
-numSubjects = int(input("How many school subjects have you completed?: "))
-credits = 0
+grade = int(input("What's the grade?: "))
 
-for x in range(numSubjects):
-    score = float(input(f"""What's your score?: """))
-
-    if score >= 60:
-        credits += 3
-
-print(f"""Total number of credits: {credits}.""")
+match grade:
+    case grade if 90 <= grade <= 100:
+        letterGrade = "A"
+        print(f"""Your grade is: {letterGrade}.""")
+    case grade if 80 <= grade <= 89:
+        letterGrade = "B"
+        print(f"""Your grade is: {letterGrade}.""")
+    case grade if 70 <= grade <= 79:
+        letterGrade = "C"
+        print(f"""Your grade is: {letterGrade}.""")
+    case grade if 60 <= grade <= 69:
+        letterGrade = "D"
+        print(f"""Your grade is: {letterGrade}.""")
+    case grade if 0 <= grade <= 59:
+        letterGrade = "F"
+        print(f"""Your grade is: {letterGrade}.""")
+    case _:
+        print("Error: Invalid grade.")
