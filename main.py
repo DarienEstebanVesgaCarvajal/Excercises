@@ -1,15 +1,9 @@
-# Escribe un programa que clasifique un triángulo en agudo, obtuso o rectángulo según sus ángulos internos.
+#Escribe un programa que solicite al usuario un número entero positivo n y calcule la suma de los primeros n números enteros. Utiliza un ciclo for para realizar la suma.
 
-firstAngle = float(input("What's the first angle of the triangle? (in degrees): "))
-secondAngle = float(input("What's the second angle of the triangle? (in degrees): "))
-thirdAngle = float(input("What's the third angle of the triangle? (in degrees): "))
+numberSum = int(input("What's the positive integer you'd like to sum up to?: "))
 
-if firstAngle + secondAngle + thirdAngle == 180:
-    if firstAngle < 90 and secondAngle < 90 and thirdAngle < 90:
-        print("The triangle is acute.")
-    elif firstAngle == 90 or secondAngle == 90 or thirdAngle == 90:
-        print("The triangle is right.")
-    elif firstAngle > 90 or secondAngle > 90 or thirdAngle > 90:
-        print("The triangle is obtuse.")
-else:
-    print("Error: The angles do not form a valid triangle.")
+totalSum = 0
+for number in range(1, numberSum + 1):
+    totalSum += number
+
+print(f"The sum of the first {numberSum} integers is: {totalSum}.")
