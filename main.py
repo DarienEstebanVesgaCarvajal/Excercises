@@ -1,9 +1,18 @@
-#Escribe un programa que solicite al usuario dos números enteros, un valor de inicio y un valor de fin. El programa debe imprimir todos los números pares en ese rango, incluyendo los límites. Usa un ciclo for para recorrer el rango.
+#Escribe un programa que genere un número aleatorio entre 1 y 100 y permita al usuario adivinarlo. El programa debe dar pistas si el número ingresado es mayor o menor que el número secreto. Usa un ciclo while para permitir al usuario seguir intentando hasta que adivine el número.
 
-startValue = int(input("What's the starting integer of your range?: "))
-endValue = int(input("What's the ending integer of your range?: "))
+import random
 
-print("The even numbers in your range are:")
-for evenNumber in range(startValue, endValue + 1):
-    if evenNumber % 2 == 0:
-        print(evenNumber)
+secretNumber = random.randint(1, 100)
+
+while True:
+    attempt = int(input("What number between 1 and 100 do you think it is?: "))
+
+    if attempt == secretNumber:
+        print("Congrats! You guessed the number.")
+        break
+    elif attempt > secretNumber:
+        print("Try again! The number is lower.")
+    elif attempt < secretNumber:
+        print("Try again! The number is higher.")
+    else:
+        print("Error: Number out of range.")
